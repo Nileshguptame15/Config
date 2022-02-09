@@ -1,0 +1,7 @@
+feedback_block.form:
+  path: /feedback
+  defaults:
+    _form: '\Drupal\feedback_block\Form\Feedback'
+    _title: "Feedback Block"
+  requirements:
+    _permission: "access content"

@@ -1,0 +1,23 @@
+apikey.data:
+  path: "/data/{apikey}/{node_id}"
+  defaults:
+    _controller: '\Drupal\node_json_data\Controller\MainController::getData'
+    _title: "API Data"
+  requirements:
+    _permission: "access content"
+
+system_apikey.data:
+  path: "/data/{apikey}/{content_type}/{node_id}"
+  defaults:
+    _controller: '\Drupal\node_json_data\Controller\SystemController::getData'
+    _title: "API Data"
+  requirements:
+    _permission: "access content"
+
+apikey.admin_settings:
+  path: "/admin/config/content/apikey"
+  defaults:
+    _form: '\Drupal\node_json_data\Form\APISettingsForm'
+    _title: "APIKey List Settings"
+  requirements:
+    _permission: "content access"

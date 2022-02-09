@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ *
+ */
+// Created a table into the database after installing the module
+function feedback_block_schema()
+{
+  $schema['feedback_block'] = array(
+    'description' => 'Stores the ratings of the customers',
+    'fields' => array(
+      'id' => array(
+        'description' => 'The primary identifier for the record.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'name' => array(
+        'description' => 'Customer name.',
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+        'default' => 'unknown',
+      ),
+      'rating' => array(
+        'description' => 'This is the rating of this customer',
+        'length' => 64,
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'created' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'Timestamp for when customer rating was created.',
+      ),
+    ),
+    'primary key' => array('id'),
+  );
+  return $schema;
+}

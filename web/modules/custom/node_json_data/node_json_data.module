@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * Implements hook_config_schema_info_alter().
+ */
+function node_json_data_site_config_schema_info_alter(&$definitions)
+{
+  $definitions['system.site']['mapping']['api'] = [
+    'type' => 'string',
+    'label' => 'Api Key',
+  ];
+}

@@ -1,0 +1,15 @@
+node_generator.form:
+  path: "/admin/generate-nodes"
+  defaults:
+    _form: '\Drupal\node_generator\Form\NodeGeneratorForm'
+    _title: "Node Generator"
+  requirements:
+    _permission: "administrator"
+
+node_generate.form:
+  path: "/generatenode"
+  defaults:
+    _form: '\Drupal\node_generator\Form\NodeGenerate'
+    _title: "Node Generator"
+  requirements:
+    _permission: "content access"
